@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="SHORTCUT ICON" href="favicon.ico" type="image/x-icon" />
+
+<meta name="description" content="Галлерея Абулханова Камиля" />
+<meta name="keywords" content="jquery tutorial,image gallery, jquery delegate" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+<title>Абулханов</title>
+</head>
+<body> 
+
+
+<div id="page">
+
+<h1>Галлерея Абулханова Камиля</h1>
+
+<div id="gallery">
+	<div id="panel">
+		<img id="largeImage" src="images/image_01_large.jpg" />
+		<div id="description"></div>
+	</div>
+
+	<div id="thumbs">
+        <img src="images/Screenshot_1.thumb.jpg" alt="" />
+        <img src="images/image_02_thumb.jpg" alt="" />
+        <img src="images/image_03_thumb.jpg" alt="" />
+        <img src="images/image_04_thumb.jpg" alt="" />
+        <img src="images/image_05_thumb.jpg" alt="" />
+	</div>
+</div>
+
+</div>
+
+<script>
+
+$('#thumbs').delegate('img','click', function(){
+	$('#largeImage').attr('src',$(this).attr('src').replace('thumb','large'));
+	$('#description').html($(this).attr('alt'));
+});
+
+</script>
+
+
+
+
+</body>
+</html>
